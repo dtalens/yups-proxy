@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -444,13 +444,13 @@
 <body>
     <header>
         <a href="/" class="header-brand">
-            <img src="/static/logo.png" alt="YUPS Logo" class="header-logo">
+            <img src="/static/logo.png" alt="Logo de YUPS" class="header-logo">
             <span>YUPS</span>
         </a>
         <nav class="header-nav">
-            <a href="/" class="nav-link">Home</a>
-            <a href="/help" class="nav-link">Help</a>
-            <a href="/status" class="nav-link">Status</a>
+            <a href="/" class="nav-link">Inici</a>
+            <a href="/help" class="nav-link">Ajuda</a>
+            <a href="/status" class="nav-link">Estat</a>
         </nav>
     </header>
 
@@ -459,7 +459,7 @@
         <div class="smart-card">
             {{ if .Card.Image }}
             <div class="smart-card-img-container">
-                <img src="{{ .Card.Image }}" alt="Preview image" class="smart-card-img" onerror="this.src='/static/logo.png'">
+                <img src="{{ .Card.Image }}" alt="Imatge de previsualització" class="smart-card-img" onerror="this.src='/static/logo.png'">
             </div>
             {{ end }}
             <div class="smart-card-body">
@@ -469,16 +469,16 @@
                 </h2>
                 <p class="smart-card-desc">{{ .Card.Description }}</p>
                 <div class="smart-card-meta">
-                    <span><strong>Source:</strong> {{ .Card.SiteName }}</span>
+                    <span><strong>Font:</strong> {{ .Card.SiteName }}</span>
                     <span>•</span>
-                    <span><strong>First seen:</strong> {{ .FirstSeenFormatted }}</span>
+                    <span><strong>Vist per primer cop:</strong> {{ .FirstSeenFormatted }}</span>
                 </div>
             </div>
         </div>
 
         <!-- Available Proxies -->
         <div class="section-header">
-            <h3 class="section-title">Available Proxy Mirrors ({{ len .Proxies }})</h3>
+            <h3 class="section-title">Servidors de proxy disponibles ({{ len .Proxies }})</h3>
         </div>
 
         {{ if .ActiveProxies }}
@@ -486,9 +486,9 @@
             <div class="category-header">
                 <span class="category-pill pill-active">
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>Active Proxies ({{ len .ActiveProxies }})</span>
+                    <span>Proxys actius ({{ len .ActiveProxies }})</span>
                 </span>
-                <span class="category-subtitle">Verified online by health checks</span>
+                <span class="category-subtitle">Verificats en línia mitjançant comprovacions d'estat</span>
             </div>
             <div class="proxy-grid">
                 {{ range .ActiveProxies }}
@@ -498,14 +498,14 @@
                             <span class="proxy-tech-title">{{ .Tech }}</span>
                             <span class="proxy-badge status-active">
                                 <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                <span>Active</span>
+                                <span>Actiu</span>
                             </span>
                         </div>
                         <p class="proxy-desc">{{ .Description }}</p>
                         <div class="proxy-dest-url">{{ .DestinationURL }}</div>
                     </div>
                     <a href="{{ .DestinationURL }}" target="_blank" rel="noopener noreferrer" class="btn-visit btn-visit-active">
-                        Open in {{ .Tech }} →
+                        Obrir a {{ .Tech }} →
                     </a>
                 </div>
                 {{ end }}
@@ -518,9 +518,9 @@
             <div class="category-header">
                 <span class="category-pill pill-manual">
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-                    <span>Manual Mode Proxies ({{ len .ManualProxies }})</span>
+                    <span>Proxys en mode manual ({{ len .ManualProxies }})</span>
                 </span>
-                <span class="category-subtitle">Excluded from automated health checks</span>
+                <span class="category-subtitle">Exclosos de les comprovacions automàtiques d'estat</span>
             </div>
             <div class="proxy-grid">
                 {{ range .ManualProxies }}
@@ -537,7 +537,7 @@
                         <div class="proxy-dest-url">{{ .DestinationURL }}</div>
                     </div>
                     <a href="{{ .DestinationURL }}" target="_blank" rel="noopener noreferrer" class="btn-visit btn-visit-manual">
-                        Open in {{ .Tech }} →
+                        Obrir a {{ .Tech }} →
                     </a>
                 </div>
                 {{ end }}
@@ -550,9 +550,9 @@
             <div class="category-header">
                 <span class="category-pill pill-inactive">
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
-                    <span>Inactive Proxies ({{ len .InactiveProxies }})</span>
+                    <span>Proxys inactius ({{ len .InactiveProxies }})</span>
                 </span>
-                <span class="category-subtitle">Currently failing health checks or offline</span>
+                <span class="category-subtitle">Actualment no passen les comprovacions d'estat o estan fora de línia</span>
             </div>
             <div class="proxy-grid">
                 {{ range .InactiveProxies }}
@@ -562,14 +562,14 @@
                             <span class="proxy-tech-title">{{ .Tech }}</span>
                             <span class="proxy-badge status-inactive">
                                 <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
-                                <span>Inactive</span>
+                                <span>Inactiu</span>
                             </span>
                         </div>
                         <p class="proxy-desc">{{ .Description }}</p>
                         <div class="proxy-dest-url">{{ .DestinationURL }}</div>
                     </div>
                     <a href="{{ .DestinationURL }}" target="_blank" rel="noopener noreferrer" class="btn-visit btn-visit-inactive">
-                        Open in {{ .Tech }} →
+                        Obrir a {{ .Tech }} →
                     </a>
                 </div>
                 {{ end }}
@@ -580,20 +580,20 @@
 
     <footer>
         <div class="footer-links">
-            <a href="/">Home</a>
+            <a href="/">Inici</a>
             <span>•</span>
-            <a href="/help">Help & Guide</a>
+            <a href="/help">Ajuda i guia</a>
             <span>•</span>
-            <a href="/status">Proxy Status</a>
+            <a href="/status">Estat dels proxys</a>
             <span>•</span>
-            <a href="https://github.com/javilopezg/yups-proxy" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+            <a href="https://github.com/javilopezg/yups-proxy" target="_blank" rel="noopener noreferrer">Repositori de GitHub</a>
             <span>•</span>
             <a href="mailto:mail@javilopezg.com">mail@javilopezg.com</a>
             <span>•</span>
-            <span>BSD-3-Clause License</span>
+            <span>Llicència BSD-3-Clause</span>
         </div>
         <div>
-            YUPS • Accessible, open and privacy-respecting web aggregation
+            YUPS • Agregació web accessible, oberta i que respecta la privacitat
         </div>
     </footer>
 </body>
