@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proxy Status - YUPS</title>
-    <meta name="description" content="Live proxy health check and availability status for YUPS.">
+    <title>Estat dels proxys - YUPS</title>
+    <meta name="description" content="Comprovació d'estat en directe i monitoratge de disponibilitat per a YUPS.">
 
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/logo-32.png">
@@ -343,87 +343,87 @@
 
     <header>
         <a href="/" class="header-brand">
-            <img src="/static/logo.png" alt="YUPS Logo" class="header-logo">
+            <img src="/static/logo.png" alt="Logo de YUPS" class="header-logo">
             <span>YUPS</span>
         </a>
 
         <div class="header-controls">
-            <label class="refresh-toggle" title="Automatically refresh every 5 minutes">
+            <label class="refresh-toggle" title="Actualitza automàticament cada 5 minuts">
                 <input type="checkbox" id="auto-refresh-toggle" checked>
-                <span>Auto-refresh</span>
+                <span>Actualització automàtica</span>
             </label>
             <span class="countdown-badge" id="countdown-badge">05:00</span>
-            <button class="btn-refresh" onclick="location.reload()">Refresh</button>
+            <button class="btn-refresh" onclick="location.reload()">Actualitza</button>
             <nav class="header-nav">
-                <a href="/" class="nav-link">Home</a>
-                <a href="/help" class="nav-link">Help</a>
-                <a href="/status" class="nav-link active">Status</a>
+                <a href="/" class="nav-link">Inici</a>
+                <a href="/help" class="nav-link">Ajuda</a>
+                <a href="/status" class="nav-link active">Estat</a>
             </nav>
         </div>
     </header>
 
     <main>
         <div style="margin-bottom: 24px;">
-            <h1 style="font-size: 1.6rem; font-weight: 800; color: var(--dark-brown); margin-bottom: 4px;">YUPS Proxy Status</h1>
-            <p style="font-size: 0.95rem; color: var(--muted-text);">Live health checks and availability monitoring for configured proxy instances.</p>
+            <h1 style="font-size: 1.6rem; font-weight: 800; color: var(--dark-brown); margin-bottom: 4px;">Estat dels proxys de YUPS</h1>
+            <p style="font-size: 0.95rem; color: var(--muted-text);">Comprovació d'estat en directe i monitoratge de disponibilitat de les instàncies de proxy configurades.</p>
         </div>
         {{if not .HasReport}}
         <div class="section-card" style="text-align: center; padding: 48px 24px;">
-            <h2 style="color: var(--dark-brown); margin-bottom: 12px;">Initial Health Check in Progress</h2>
-            <p style="color: var(--muted-text);">The background checker is verifying proxies for the first time. This page will update automatically once complete.</p>
+            <h2 style="color: var(--dark-brown); margin-bottom: 12px;">Comprovació d'estat inicial en curs</h2>
+            <p style="color: var(--muted-text);">El comprovador en segon pla està verificant els proxys per primer cop. Aquesta pàgina s'actualitzarà automàticament quan acabi.</p>
         </div>
         {{else}}
 
-        <!-- 1. SUMMARY AT THE TOP -->
+        <!-- 1. RESUM A LA PART SUPERIOR -->
         <section class="section-card">
             <div class="section-title">
-                <span>Proxy Health Summary</span>
+                <span>Resum de l'estat dels proxys</span>
                 <span style="font-size: 0.85rem; font-weight: 400; color: var(--muted-text);">
-                    Checked: {{.CheckedAtFormatted}} (took {{.DurationFormatted}})
+                    Comprovat: {{.CheckedAtFormatted}} (ha trigat {{.DurationFormatted}})
                 </span>
             </div>
 
             <div class="stats-grid">
                 <div class="stat-box">
                     <div class="stat-value val-total">{{.Total}}</div>
-                    <div class="stat-label">Total Proxies</div>
+                    <div class="stat-label">Total de proxys</div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-value val-active">{{.Active}}</div>
-                    <div class="stat-label">Active</div>
+                    <div class="stat-label">Actius</div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-value val-inactive">{{.Inactive}}</div>
-                    <div class="stat-label">Inactive</div>
+                    <div class="stat-label">Inactius</div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-value val-skipped">{{.Skipped}}</div>
-                    <div class="stat-label">Manual</div>
+                    <div class="stat-label">Manuals</div>
                 </div>
                 {{if gt .Fallback 0}}
                 <div class="stat-box">
                     <div class="stat-value val-fallback">{{.Fallback}}</div>
-                    <div class="stat-label">Fallback Active</div>
+                    <div class="stat-label">Reserva activa</div>
                 </div>
                 {{end}}
             </div>
 
             {{if .FallbackServices}}
             <div class="notice-box">
-                <strong>Notice:</strong> All probed proxies were down or unresponsive for categories: <em>{{range $i, $s := .FallbackServices}}{{if $i}}, {{end}}{{$s}}{{end}}</em>.<br>
-                They have been kept active as a fallback in case an upstream bot challenge or software update expelled bot requests.
+                <strong>Avís:</strong> Tots els proxys provats estaven inactius o no responien per a les categories: <em>{{range $i, $s := .FallbackServices}}{{if $i}}, {{end}}{{$s}}{{end}}</em>.<br>
+                S'han mantingut actius com a reserva en cas que un desafiament de bot o una actualització de programari hagi expulsat les peticions automatitzades.
             </div>
             {{end}}
 
-            <h3 style="font-size: 1rem; color: var(--dark-brown); margin-bottom: 12px;">Breakdown by Service</h3>
+            <h3 style="font-size: 1rem; color: var(--dark-brown); margin-bottom: 12px;">Desglossament per servei</h3>
             <table class="breakdown-table">
                 <thead>
                     <tr>
-                        <th>Service</th>
-                        <th>Active</th>
-                        <th>Inactive</th>
-                        <th>Manual / Skipped</th>
-                        <th>Category Fallback</th>
+                        <th>Servei</th>
+                        <th>Actius</th>
+                        <th>Inactius</th>
+                        <th>Manuals / Omesos</th>
+                        <th>Reserva de categoria</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -440,11 +440,11 @@
             </table>
         </section>
 
-        <!-- 2. DETAIL AT THE BOTTOM -->
+        <!-- 2. DETALL A LA PART INFERIOR -->
         <section class="section-card">
             <div class="section-title">
-                <span>Detailed Check Results</span>
-                <span style="font-size: 0.85rem; font-weight: 400; color: var(--muted-text);">{{len .Results}} entries</span>
+                <span>Resultats detallats de la comprovació</span>
+                <span style="font-size: 0.85rem; font-weight: 400; color: var(--muted-text);">{{len .Results}} entrades</span>
             </div>
 
             <div class="terminal-container">
@@ -458,33 +458,33 @@
 
     <footer>
         <div class="footer-links">
-            <a href="/">Home</a>
+            <a href="/">Inici</a>
             <span>•</span>
-            <a href="/help">Help & Guide</a>
+            <a href="/help">Ajuda i guia</a>
             <span>•</span>
-            <a href="/status">Proxy Status</a>
+            <a href="/status">Estat dels proxys</a>
             <span>•</span>
-            <a href="https://github.com/javilopezg/yups-proxy" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+            <a href="https://github.com/javilopezg/yups-proxy" target="_blank" rel="noopener noreferrer">Repositori de GitHub</a>
             <span>•</span>
             <a href="mailto:mail@javilopezg.com">mail@javilopezg.com</a>
             <span>•</span>
-            <span>BSD-3-Clause License</span>
+            <span>Llicència BSD-3-Clause</span>
         </div>
         <div>
-            YUPS • Accessible, open and privacy-respecting web aggregation
+            YUPS • Agregació web accessible, oberta i que respecta la privacitat
         </div>
     </footer>
 
     <script>
         (function() {
-            const INTERVAL_SECONDS = 300; // 5 minutes
+            const INTERVAL_SECONDS = 300; // 5 minuts
             let secondsRemaining = INTERVAL_SECONDS;
             let timerId = null;
 
             const toggle = document.getElementById('auto-refresh-toggle');
             const badge = document.getElementById('countdown-badge');
 
-            // Load saved preference
+            // Carrega la preferència desada
             const savedPref = localStorage.getItem('yups_status_auto_refresh');
             if (savedPref !== null) {
                 toggle.checked = (savedPref === 'true');
@@ -492,7 +492,7 @@
 
             function updateDisplay() {
                 if (!toggle.checked) {
-                    badge.textContent = 'Paused';
+                    badge.textContent = 'En pausa';
                     badge.style.background = '#E2D5C8';
                     badge.style.color = '#7D6B5D';
                     return;
@@ -551,4 +551,3 @@
     </script>
 </body>
 </html>
-
