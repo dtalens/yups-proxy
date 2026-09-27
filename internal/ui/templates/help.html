@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Use YUPS - Your Unified Proxy Service</title>
-    <meta name="description" content="Step-by-step guide on how to use YUPS to access and share web content via privacy-preserving proxies.">
+    <title>Com utilitzar YUPS - El teu servei de proxy unificat</title>
+    <meta name="description" content="Guia pas a pas sobre com utilitzar YUPS per a accedir i compartir contingut web mitjançant proxys que respecten la privacitat.">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="How to Use YUPS - Help & Guide">
-    <meta property="og:description" content="Step-by-step guide on how to use YUPS to access and share web content via privacy-preserving proxies.">
+    <meta property="og:title" content="Com utilitzar YUPS - Ajuda i guia">
+    <meta property="og:description" content="Guia pas a pas sobre com utilitzar YUPS per a accedir i compartir contingut web mitjançant proxys que respecten la privacitat.">
     <meta property="og:image" content="/static/logo.png">
     <meta property="og:type" content="website">
 
@@ -316,23 +316,23 @@
             <span>YUPS</span>
         </a>
         <nav class="header-nav">
-            <a href="/" class="nav-link">Home</a>
-            <a href="/help" class="nav-link active">Help</a>
-            <a href="/status" class="nav-link">Status</a>
+            <a href="/" class="nav-link">Inici</a>
+            <a href="/help" class="nav-link active">Ajuda</a>
+            <a href="/status" class="nav-link">Estat</a>
         </nav>
     </header>
 
     <main>
         {{ if .ErrorMessage }}
         <div class="alert-box">
-            <h3>Notice</h3>
+            <h3>Avís</h3>
             <p>{{ .ErrorMessage }}</p>
         </div>
         {{ end }}
 
         <div class="guide-header">
-            <h1>How to Use YUPS</h1>
-            <p>Your Unified Proxy Service bridges the web to privacy-respecting, fast, and open alternatives.</p>
+            <h1>Com utilitzar YUPS</h1>
+            <p>El teu servei de proxy unificat connecta la web amb alternatives obertes, ràpides i que respecten la privacitat.</p>
         </div>
 
         <div class="steps-container">
@@ -340,9 +340,9 @@
             <div class="step-card">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <h2 class="step-title">Get any link</h2>
+                    <h2 class="step-title">Aconsegueix qualsevol enllaç</h2>
                     <p class="step-desc">
-                        Find an article, tweet, post, or video that you want to open privately or share with friends without tracking or login walls.
+                        Cerca un article, piulada, publicació o vídeo que vulgues obrir de manera privada o compartir amb amics sense seguiment ni barreres d'inici de sessió.
                     </p>
                     <div class="code-box">
                         https://www.reddit.com/r/mildlyinfuriating/comments/1wa535y/a_12_pack_of_soda_is_1299/
@@ -354,15 +354,15 @@
             <div class="step-card">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <h2 class="step-title">Prepend <code>https://yups.io/?url=</code> (or simply <code>https://yups.io/</code>)</h2>
+                    <h2 class="step-title">Afig davant <code>https://yups.io/?url=</code> (o simplement <code>https://yups.io/</code>)</h2>
                     <p class="step-desc">
-                        Place the YUPS address right in front of your destination link:
+                        Col·loca l'adreça de YUPS just davant de l'enllaç de destinació:
                     </p>
                     <div class="code-box">
                         <span class="highlight-part">https://yups.io/?url=</span>https://www.reddit.com/r/mildlyinfuriating/comments/1wa535y/a_12_pack_of_soda_is_1299/
                     </div>
                     <p class="step-desc" style="font-size: 0.88rem; color: var(--muted-text); margin-top: 10px; margin-bottom: 6px;">
-                        Tip: You can also prepend <code>https://yups.io/</code> directly to any URL without query parameters:
+                        Consell: També pots afegir <code>https://yups.io/</code> directament davant de qualsevol URL sense paràmetres de consulta:
                     </p>
                     <div class="code-box">
                         <span class="highlight-part">https://yups.io/</span>reddit.com/r/mildlyinfuriating/comments/1wa535y/a_12_pack_of_soda_is_1299/
@@ -374,23 +374,23 @@
             <div class="step-card">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <h2 class="step-title">Open or share seamlessly</h2>
+                    <h2 class="step-title">Obri o comparteix sense problemes</h2>
                     <p class="step-desc">
-                        Depending on how you use the link, YUPS takes care of the rest automatically:
+                        Depenent de com utilitzes l'enllaç, YUPS s'encarrega automàticament de la resta:
                     </p>
                     
                     <div class="features-grid">
                         <div class="feature-box">
-                            <strong>In your browser</strong>
-                            <p>You are instantly redirected to a working, fast alternative frontend (such as Redlib, Nitter, or Invidious).</p>
+                            <strong>Al teu navegador</strong>
+                            <p>Et redirigeix a l'instant a una interfície alternativa ràpida i funcional (com ara Redlib, Nitter o Invidious).</p>
                         </div>
                         <div class="feature-box">
-                            <strong>Shared on chat apps</strong>
-                            <p>When posted on Telegram, WhatsApp, Discord, or Slack, a rich preview card with image and title is generated automatically.</p>
+                            <strong>Compartit en aplicacions de xat</strong>
+                            <p>En publicar-ho a Telegram, WhatsApp, Discord o Slack, es genera automàticament una targeta de previsualització amb imatge i títol.</p>
                         </div>
                         <div class="feature-box">
-                            <strong>Choose your mirror</strong>
-                            <p>Add <code>&action=links</code> to see all available mirrors and select your preferred proxy manually.</p>
+                            <strong>Tria el teu repositori (mirall)</strong>
+                            <p>Afig <code>&action=links</code> per a veure tots els servidors mirall disponibles i seleccionar el teu proxy preferit manualment.</p>
                         </div>
                     </div>
                 </div>
@@ -398,26 +398,26 @@
         </div>
 
         <div class="action-center">
-            <a href="/" class="btn-home">Try it on YUPS Home →</a>
+            <a href="/" class="btn-home">Prova-ho a l'Inici de YUPS →</a>
         </div>
     </main>
 
     <footer>
         <div class="footer-links">
-            <a href="/">Home</a>
+            <a href="/">Inici</a>
             <span>•</span>
-            <a href="/help">Help & Guide</a>
+            <a href="/help">Ajuda i guia</a>
             <span>•</span>
-            <a href="/status">Proxy Status</a>
+            <a href="/status">Estat dels proxys</a>
             <span>•</span>
-            <a href="https://github.com/javilopezg/yups-proxy" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+            <a href="https://github.com/javilopezg/yups-proxy" target="_blank" rel="noopener noreferrer">Repositori de GitHub</a>
             <span>•</span>
             <a href="mailto:mail@javilopezg.com">mail@javilopezg.com</a>
             <span>•</span>
-            <span>BSD-3-Clause License</span>
+            <span>Llicència BSD-3-Clause</span>
         </div>
         <div>
-            YUPS • Accessible, open and privacy-respecting web aggregation
+            YUPS • Agregació web accessible, oberta i que respecta la privacitat
         </div>
     </footer>
 </body>
