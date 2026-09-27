@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YUPS - Your Unified Proxy Service</title>
-    <meta name="description" content="Access web content seamlessly via privacy-preserving and alternative proxies.">
+    <title>YUPS - El teu servei de proxy unificat</title>
+    <meta name="description" content="Accedeix al contingut web sense problemes mitjançant proxys alternatius que respecten la privacitat.">
     
     <!-- Open Graph & Social Cards -->
-    <meta property="og:title" content="YUPS - Your Unified Proxy Service">
-    <meta property="og:description" content="Access web content seamlessly via privacy-preserving and alternative proxies.">
+    <meta property="og:title" content="YUPS - El teu servei de proxy unificat">
+    <meta property="og:description" content="Accedeix al contingut web sense problemes mitjançant proxys alternatius que respecten la privacitat.">
     <meta property="og:image" content="/static/logo.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="YUPS - Your Unified Proxy Service">
-    <meta name="twitter:description" content="Access web content seamlessly via privacy-preserving and alternative proxies.">
+    <meta name="twitter:title" content="YUPS - El teu servei de proxy unificat">
+    <meta name="twitter:description" content="Accedeix al contingut web sense problemes mitjançant proxys alternatius que respecten la privacitat.">
     <meta name="twitter:image" content="/static/logo.png">
 
     <!-- Favicons -->
@@ -370,71 +370,71 @@
 <body>
     <header>
         <a href="/" class="header-brand">
-            <img src="/static/logo.png" alt="YUPS Logo" class="header-logo">
+            <img src="/static/logo.png" alt="Logo de YUPS" class="header-logo">
             <span>YUPS</span>
         </a>
         <nav class="header-nav">
-            <a href="/" class="nav-link active">Home</a>
-            <a href="/help" class="nav-link">Help</a>
-            <a href="/status" class="nav-link">Status</a>
+            <a href="/" class="nav-link active">Inici</a>
+            <a href="/help" class="nav-link">Ajuda</a>
+            <a href="/status" class="nav-link">Estat</a>
         </nav>
     </header>
 
     <main>
         <a href="/" class="logo-container">
-            <img src="/static/logo.png" alt="YUPS Capybara Logo" class="logo-img">
+            <img src="/static/logo.png" alt="Logo Capibara de YUPS" class="logo-img">
             <h1 class="brand-title">YUPS</h1>
-            <p class="brand-tagline">Your Unified Proxy Service</p>
+            <p class="brand-tagline">El teu servei de proxy unificat</p>
         </a>
 
         <form action="/" method="GET">
             <div class="search-box">
-                <span class="url-prefix" id="urlPrefix" title="Click to copy prefix">{{ if .PrefixURL }}{{ .PrefixURL }}{{ else }}https://yups.io/?url={{ end }}</span>
+                <span class="url-prefix" id="urlPrefix" title="Fes clic per a copiar el prefix">{{ if .PrefixURL }}{{ .PrefixURL }}{{ else }}https://yups.io/?url={{ end }}</span>
                 <input 
                     type="text" 
                     name="url" 
                     id="urlInput"
                     class="search-input" 
-                    placeholder="x.com/..., reddit.com/..., or any page" 
+                    placeholder="x.com/..., reddit.com/..., o qualsevol pàgina" 
                     autofocus 
                     required
                     autocomplete="off"
                     spellcheck="false"
                 >
-                <button type="button" id="copyBtn" class="btn-copy" disabled title="Copy full YUPS URL to clipboard">
+                <button type="button" id="copyBtn" class="btn-copy" disabled title="Copia l'URL completa de YUPS al portapapers">
                     <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                     </svg>
-                    <span id="copyBtnText">Copy</span>
+                    <span id="copyBtnText">Copiar</span>
                 </button>
             </div>
             <div class="buttons-row">
-                <button type="submit" name="action" value="lucky" class="btn btn-primary">I'm feeling lucky</button>
-                <button type="submit" name="action" value="links" class="btn btn-secondary">Get proxy links</button>
+                <button type="submit" name="action" value="lucky" class="btn btn-primary">Tinc sort</button>
+                <button type="submit" name="action" value="links" class="btn btn-secondary">Obtindre enllaços de proxy</button>
             </div>
             <p class="hint-text">
-                Pressing Enter triggers <strong>I'm feeling lucky</strong> and redirects immediately to a fast proxy mirror.
+                En prémer Retorn s'activa <strong>Tinc sort</strong> i et redirigeix immediatament a un servidors mirall ràpid.
             </p>
         </form>
     </main>
 
     <footer>
         <div class="footer-links">
-            <a href="/">Home</a>
+            <a href="/">Inici</a>
             <span>•</span>
-            <a href="/help">Help & Guide</a>
+            <a href="/help">Ajuda i guia</a>
             <span>•</span>
-            <a href="/status">Proxy Status</a>
+            <a href="/status">Estat dels proxys</a>
             <span>•</span>
-            <a href="https://github.com/javilopezg/yups-proxy" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+            <a href="https://github.com/javilopezg/yups-proxy" target="_blank" rel="noopener noreferrer">Repositori de GitHub</a>
             <span>•</span>
             <a href="mailto:mail@javilopezg.com">mail@javilopezg.com</a>
             <span>•</span>
-            <span>BSD-3-Clause License</span>
+            <span>Llicència BSD-3-Clause</span>
         </div>
         <div>
-            YUPS • Accessible, open and privacy-respecting web aggregation
+            YUPS • Agregació web accessible, oberta i que respecta la privacitat
         </div>
     </footer>
 
@@ -470,10 +470,10 @@
                 const fullUrl = getPrefix() + encodeURIComponent(val);
                 try {
                     await navigator.clipboard.writeText(fullUrl);
-                    copyBtnText.textContent = 'Copied!';
+                    copyBtnText.textContent = 'Copiat!';
                     copyBtn.classList.add('copied');
                     setTimeout(() => {
-                        copyBtnText.textContent = 'Copy';
+                        copyBtnText.textContent = 'Copiar';
                         copyBtn.classList.remove('copied');
                     }, 2000);
                 } catch (e) {
@@ -483,10 +483,10 @@
                     el.select();
                     document.execCommand('copy');
                     document.body.removeChild(el);
-                    copyBtnText.textContent = 'Copied!';
+                    copyBtnText.textContent = 'Copiat!';
                     copyBtn.classList.add('copied');
                     setTimeout(() => {
-                        copyBtnText.textContent = 'Copy';
+                        copyBtnText.textContent = 'Copiar';
                         copyBtn.classList.remove('copied');
                     }, 2000);
                 }
@@ -496,7 +496,7 @@
                 try {
                     await navigator.clipboard.writeText(urlPrefix.textContent.trim());
                     const orig = urlPrefix.textContent;
-                    urlPrefix.textContent = 'Copied!';
+                    urlPrefix.textContent = 'Copiat!';
                     setTimeout(() => { urlPrefix.textContent = orig; }, 1200);
                 } catch (e) {}
             });
